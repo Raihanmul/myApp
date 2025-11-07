@@ -12,13 +12,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function DetailScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header */}
       <View style={styles.appBar}>
         <Ionicons name="arrow-back" size={24} color="#FF5B13" />
         <Text style={styles.appBarTitle}>Note Details</Text>
       </View>
 
-      {/* Scrollable content */}
       <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
         <Image
           style={{ width: "100%", height: 220 }}
@@ -39,7 +37,6 @@ export default function DetailScreen() {
         </View>
       </ScrollView>
 
-      {/* Fixed button */}
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.buttonUpdate}>
           <Text style={{ color: "white" }}>Update</Text>
