@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import {
   Image,
@@ -18,13 +19,17 @@ const images = [
   require("@/assets/images/image-3.png"),
 ];
 
-export default function UpdateScreen() {
+export default function AddScreen() {
+  const router = useRouter();
   const [selectedImage, setSelectedImage] = useState<number>(0);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.appBar}>
-        <Ionicons name="arrow-back" size={24} color="#FF5B13" />
-        <Text style={styles.appBarTitle}>Update Note</Text>
+        <TouchableOpacity onPress={() => router.back()}>
+          <Ionicons name="arrow-back" size={24} color="#FF5B13" />
+        </TouchableOpacity>
+        <Text style={styles.appBarTitle}>Add Note</Text>
       </View>
 
       <View style={styles.form}>
@@ -57,8 +62,8 @@ export default function UpdateScreen() {
         </ScrollView>
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.updateButton}>
-          <Text style={{ color: "white" }}>Update</Text>
+        <TouchableOpacity style={styles.addButton}>
+          <Text style={{ color: "white" }}>Add</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -126,7 +131,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 10,
   },
-  updateButton: {
+  addButton: {
     padding: 10,
     backgroundColor: "#FF5B13",
     borderRadius: 10,
