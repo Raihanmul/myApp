@@ -36,6 +36,8 @@ export default function UpdateScreen() {
       setDescription(note.description);
 
       const imageIndex = images.findIndex((img) => img === note.image);
+
+      setSelectedImage(imageIndex !== -1 ? imageIndex : 0);
     }
   }, [note]);
 
