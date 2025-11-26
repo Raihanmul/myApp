@@ -27,10 +27,7 @@ export default function DetailScreen() {
       </View>
 
       <ScrollView contentContainerStyle={{ paddingBottom: 100 }}>
-        <Image
-          style={{ width: "100%", height: 220 }}
-          source={note?.image}
-        />
+        <Image style={{ width: "100%", height: 220 }} source={note?.image} />
         <View style={styles.content}>
           <Text style={styles.title}>{note?.title}</Text>
           <Text style={styles.date}>{note?.date}</Text>
@@ -39,7 +36,10 @@ export default function DetailScreen() {
       </ScrollView>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.buttonUpdate}>
+        <TouchableOpacity
+          style={styles.buttonUpdate}
+          onPress={() => router.push(`/update/${note?.id}`)}
+        >
           <Text style={{ color: "white" }}>Update</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonDelete}>
